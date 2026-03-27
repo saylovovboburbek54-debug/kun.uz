@@ -1,0 +1,20 @@
+html {
+    font-size: 5px;
+}
+
+h1 {
+    font-size: 100px;
+    /* font-size: 30vh; */
+    /* font-size: 30vw; */
+}
+
+div {
+    font-size: 10px;
+}
+
+p {
+    /* width: 200px; */
+
+    font-size: 10em;
+    font-size: 10rem;
+}

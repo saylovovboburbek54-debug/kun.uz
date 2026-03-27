@@ -1,0 +1,203 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-list {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.header-link {
+  text-decoration: none;
+  font-family: Mulish;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #1f1534;
+  opacity: 0.6;
+}
+
+.active {
+  opacity: 100;
+  font-weight: bold;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.hero-title {
+  width: 426px;
+  font-family: Mulish;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: 0%;
+}
+
+.hero-text {
+  width: 445px;
+  font-family: Mulish;
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 32px;
+  letter-spacing: 0%;
+  color: #7d7987;
+}
+
+.hero-link {
+  text-decoration: none;
+  background-color: #458ff6;
+  padding: 15px 20px;
+  border-radius: 40px;
+  font-family: Mulish;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  color: #ffffff;
+}
+
+.service {
+  text-align: center;
+}
+
+.service-line {
+  width: 56px;
+  height: 2px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.service-heading {
+  font-family: Mulish;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 56px;
+  letter-spacing: 0%;
+}
+
+.service-text {
+  font-family: Mulish;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0%;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.service-subtitle {
+  padding: 20px;
+  list-style: none;
+  text-align: start;
+  width: 350px;
+}
+
+.service-button {
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  opacity: 1;
+  border-radius: 55px;
+  background-color: white;
+  border: 1.4px solid #458ff6;
+  color: #458ff6;
+}
+.healthcare {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding:20px;
+  opacity: 1;
+  align-items: center;
+}
+.healthcare-right {
+  width: 486px;
+  height: 388px;
+  text-align: start;
+  opacity: 1;
+}
+.healthcare-hr {
+  width: 56px;
+  height: 2px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  text-align: start;
+  margin-left: 0px;
+}
+.healthcare-btn {
+  width: 200px;
+  height: 60px;
+  opacity: 1;
+  border-radius: 55px;
+  background-color: white;
+  border: 1.4px solid #458ff6;
+  color: #458ff6;
+margin-top:40px;
+}
+
+.apps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding:20px;
+  opacity: 1;
+  align-items: center;
+  margin-top:40px;
+}
+.apps-left {
+  width: 486px;
+  height: 388px;
+  text-align: start;
+  opacity: 1;
+  margin-top:40px;
+}
+.apps-hr {
+  width: 56px;
+  height: 2px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  text-align: start;
+  margin-left: 0px;
+  margin-top:20px;
+}
+.apps-btn {
+  width: 200px;
+  height: 60px;
+  opacity: 1;
+  border-radius: 55px;
+  background-color: white;
+  border: 1.4px solid #458ff6;
+  color: #458ff6;
+  margin-top:40px;
+}

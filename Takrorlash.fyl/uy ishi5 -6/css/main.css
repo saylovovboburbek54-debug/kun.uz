@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #7f9cc9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.card {
+    background: #ffffff;
+    width: 900px;
+    padding: 50px 30px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.box {
+    width: 30%;
+}
+
+.box img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.box h3 {
+    letter-spacing: 3px;
+    font-size: 14px;
+    color: #4c6fbf;
+    margin-bottom: 15px;
+}
+
+.box p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.price {
+    font-size: 28px;
+    color: #4c6fbf;
+    font-weight: bold;
+}
+
+.price span {
+    font-size: 14px;
+    color: #777;
+    font-weight: normal;
+}

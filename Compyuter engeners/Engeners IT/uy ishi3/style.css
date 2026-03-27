@@ -1,0 +1,45 @@
+div {
+     text-align: center;
+    background-color: rgb(214, 210, 210);
+    padding: 50px;
+
+
+}
+
+
+img {
+
+    display: block;
+    margin:  0 auto;
+}
+   
+p {
+
+    text-align: center;
+}
+    
+h2 {
+
+    text-align: center;
+}
+
+ul {
+    text-align: center;
+     
+  max-width: 250px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+
+  
+
+}
+
+
+
+
+blockquote {
+    font-style: italic;
+  max-width: 250px;
+  margin: 0 auto 50px auto;
+  text-align: left;
+}

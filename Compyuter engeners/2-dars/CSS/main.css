@@ -1,0 +1,45 @@
+body{
+    font-family: "Playwrite IN Guides" , cursive;
+
+    box-sizing: border-box ;
+}
+
+.container{
+    width: 100%;
+    width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+
+    background-color: red;
+
+   /* margin-top: 0;
+    margin-bottom: 0;
+
+
+    margin-left: auto;
+    margin-right: auto;*/
+
+}
+
+h1{
+    color: yellow;
+    color: rgb(53, 111, 125);
+
+}
+p{
+    width: 300px;
+    box-shadow: 0 0 10px 110px yellow;
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playwrite-in-guides-regular {
+  font-family: "Playwrite IN Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+

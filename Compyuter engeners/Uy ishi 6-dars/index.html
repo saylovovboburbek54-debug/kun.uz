@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+ <link rel="stylesheet" href="./css/main.css">
+<title>Car Selection</title>
+
+<style>
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <!-- MERCEDES CLS 63 -->
+    <div class="card" onclick="selectCard(this)">
+        <img src="images/rasim1.png" alt="Mercedes CLS 63">
+        <div class="content">
+            <div class="title">Mercedes-Benz CLS 63</div>
+            <div class="info">AMG • Automatic</div>
+            <div class="info">Luxury Sport Sedan</div>
+            <div class="price">$190 / day</div>
+            <div class="selected">✔ TANLANDI</div>
+        </div>
+    </div>
+
+    <!-- AUDI RS7 -->
+    <div class="card" onclick="selectCard(this)">
+        <img src="images/rasim2.png" alt="Audi RS7">
+        <div class="content">
+            <div class="title">Audi RS7</div>
+            <div class="info">Quattro • Automatic</div>
+            <div class="info">Sport Performance</div>
+            <div class="price">$200 / day</div>
+            <div class="selected">✔ TANLANDI</div>
+            
+        </div>
+    </div>
+
+    <!-- BMW M5 F90 -->
+    <div class="card" onclick="selectCard(this)">
+        <img src="images/rasim3.png" alt="BMW M5 F90 ">
+        <div class="content">
+            <div class="title">BMW M5 F90 </div>
+            <div class="info">M Power • Automatic</div>
+            <div class="info">High Performance</div>
+            <div class="price">$250 / day</div>
+            <div class="selected">✔ TANLANDI</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function selectCard(card){
+    document.querySelectorAll('.card').forEach(c=>{
+        c.classList.remove('active');
+    });
+    card.classList.add('active');
+}
+</script>
+
+</body>
+</html>

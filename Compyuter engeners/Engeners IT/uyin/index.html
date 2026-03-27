@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ball Jump Game PRO</title>
+<style>
+    body {
+        margin: 0;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial;
+    }
+    canvas {
+        border: 3px solid white;
+    }
+</style>
+</head>
+<body>
+
+    <Image>https://ru.pngtree.com/free-backgrounds-photos/2d
+</Image>
+
+<canvas id="game" width="400" height="500"></canvas>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+/* ===== FON ===== */
+const bg = new Image();
+bg.src = "https://i.imgur.com/8QfQZ5B.jpg";
+
+/* ===== OVOZLAR ===== */
+const jumpSound = new Audio("https://www.soundjay.com/button/sounds/button-16.mp3");
+const hitSound  = new Audio("https://www.soundjay.com/button/sounds/button-10.mp3");
+
+/* ===== O‘YINCHI ===== */
+let ball = {
+    x: 200,
+    y: 200,
+    r: 12,
+    vy: 0,
+    speed: 5,
+    health: 3
+};
+
+let gravity = 0.45;
+let jump = -10;
+
+/* ===== PLATFORMALAR ===== */
+let platforms = [];
+for (let i = 0; i < 6; i++) {
+    platforms.push({
+        x: Math.random() * 280,
+        y: i * 80,
+        w: 120,
+        h: 10
+    });
+}
+
+/* ===== DUSHMANLAR ===== */
+let enemies = [];
+for (let i = 0; i < 3; i++) {
+    enemies.push({
+        x: Math.random() * 360,
+        y: 0,
+        size: 20,
+        speed: 0.6
+    });
+}
+
+let score = 0;
+let keys = {};
+let lastHit = 0;
+
+document.addEventListener("keydown", e => keys[e.key] = true);
+document.addEventListener("keyup", e => keys[e.key] = false);
+
+function update() {
+    // harakat
+    if (keys["ArrowLeft"]) ball.x -= ball.speed;
+    if (keys["ArrowRight"]) ball.x += ball.speed;
+
+    ball.vy += gravity;
+    ball.y += ball.vy;
+
+    // platform bilan sakrash
+    platforms.forEach(p => {
+        if (
+            ball.x + ball.r > p.x &&
+            ball.x - ball.r < p.x + p.w &&
+            ball.y + ball.r > p.y &&
+            ball.y + ball.r < p.y + p.h &&
+            ball.vy > 0
+        ) {
+            ball.vy = jump;
+            jumpSound.play();
+            score++;
+        }
+    });
+
+    // dushmanlar (faqat gorizontal)
+    enemies.forEach(enemy => {
+        if (enemy.x < ball.x) enemy.x += enemy.speed;
+        if (enemy.x > ball.x) enemy.x -= enemy.speed;
+
+        // urilish (1 soniya invulnerability)
+        let now = Date.now();
+        if (
+            ball.x + ball.r > enemy.x &&
+            ball.x - ball.r < enemy.x + enemy.size &&
+            ball.y + ball.r > enemy.y &&
+            ball.y - ball.r < enemy.y + enemy.size &&
+            now - lastHit > 1000
+        ) {
+            hitSound.play();
+            ball.health--;
+            lastHit = now;
+            enemy.x = Math.random() * 360;
+            enemy.y = 0;
+        }
+    });
+
+    /*=== jon tugasa ===*/
+    if (ball.health <= 0) {
+        alert("Game Over! Score: " + score);
+        location.reload();
+    }
+
+    // pastga tushsa
+    if (ball.y > canvas.height) {
+        ball.health--;
+        ball.y = 200;
+        ball.vy = 0;
+    }
+
+    // platformlar siljishi
+    if (ball.y < 200) {
+        ball.y = 200;
+        platforms.forEach(p => {
+            p.y += 1.5;
+            if (p.y > canvas.height) {
+                p.y = 0;
+                p.x = Math.random() * 280;
+            }
+        });
+    }
+}
+
+function draw() {
+    ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+
+    // ball
+    ctx.fillStyle = "lime";
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    // platformalar
+    ctx.fillStyle = "white";
+    platforms.forEach(p => {
+        ctx.fillRect(p.x, p.y, p.w, p.h);
+    });
+
+    // dushmanlar
+    ctx.fillStyle = "red";
+    enemies.forEach(enemy => {
+        ctx.fillRect(enemy.x, enemy.y, enemy.size, enemy.size);
+    });
+
+    // score
+    ctx.fillStyle = "yellow";
+    ctx.fillText("Score: " + score, 10, 20);
+
+    // health
+    ctx.fillStyle = "pink";
+    ctx.fillText("❤️ Health: " + ball.health, 280, 20);
+}
+
+function loop() {
+    update();
+    draw();
+    requestAnimationFrame(loop);
+}
+
+loop();
+</script>
+
+</body>
+</html>
