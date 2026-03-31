@@ -80,9 +80,11 @@ nav a:hover {
 }
 
 .maps-container {
+    width: 100px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
+    border-radius: 90px;
 }
 
 .map-card {
